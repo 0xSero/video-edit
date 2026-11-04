@@ -1,0 +1,37 @@
+{
+  "workdir": "/tmp/edit-demo",
+  "output": "Topic - 2026-09-02 - edit.mp4",
+  "target_minutes": 25,
+
+  "keep": [[17.3, 34.6], [103.9, 130.1], [194.6, 330.9], [338.5, 340.1],
+           [385.3, 477.9], [505.4, 521.2], [561.6, 603.4], [631.0, 672.2],
+           [687.4, 724.1], [743.6, 781.4], [806.0, 852.6], [855.4, 936.1],
+           [992.0, 1202.3], [1213.0, 1243.1], [1262.0, 1308.8], [1429.9, 1440.3]],
+  "cuts": [[592.0, 598.2], [1568.5, 1576.5]],
+  "cuts_note": "privacy cuts are applied after keep, e.g. 9:52 and 26:08",
+
+  "pause": {"max": 0.7, "keep": 0.4, "loud_db": -26},
+
+  "blur": [
+    {"t0": 634.5, "t1": 644.5},
+    {"t0": 704.0, "t1": 714.5}
+  ],
+  "blur_regions": [[295, 95, 1605, 680], [295, 775, 1085, 170]],
+  "boxes": [
+    {"x": 613, "y": 895, "w": 249, "h": 70, "t0": 80.5, "t1": 86.0,
+     "note": "static tailnet hostname in a terminal prompt"}
+  ],
+
+  "audio_chain": "highpass=f=75,equalizer=f=220:t=q:w=1.2:g=-2.5,equalizer=f=3200:t=q:w=1:g=2,equalizer=f=9000:t=q:w=1:g=1,deesser=i=0.3,acompressor=threshold=-20dB:ratio=3:attack=6:release=120:makeup=1.6",
+  "loudnorm": {"I": -16, "TP": -1.5, "LRA": 11},
+  "enhanced_wav": "df_enhanced.wav",
+
+  "render_groups": 4,
+  "video_bitrate": "14M",
+  "encoder": "h264_videotoolbox",
+
+  "verify_windows": [[78, 88], [630, 650], [700, 720]],
+
+  "chapters": [[17.3, "Intro"], [103.9, "Second topic"], [194.6, "Third topic"],
+               [338.5, "Demo"]]
+}

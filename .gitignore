@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.DS_Store
+zoom/
+vframes/
+frames/
+camall/
+out_sheet_*/
+edit/
+*.wav
+*.mp4
+*.mov
+*.aiff
